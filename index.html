@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b65c4e277c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <div class="container">
+    <body>
+      <div class="row heading">
+        <div class="col-5 heading-col">Weather Around The World</div>
+
+        <div class="col-7">
+          <form class="form-city" id="searching">
+            <input type="text" id="type-city" placeholder="Type your city" />
+            <button type="submit" class="btn btn-primary mb-3">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <button
+            type="button"
+            class="btn btn-primary mb-3"
+            id="current-location"
+          >
+            Current Location
+          </button>
+        </div>
+      </div>
+
+      <div class="row actual">
+        <div class="col-5">
+          <div class="weather-today">Weather today:</div>
+          <div class="box-actual-time">
+            <div class="date" id="actual-date">August, 22nd</div>
+            <div class="hour" id="actual-hour">Sunday - 11:51</div>
+          </div>
+
+          <div class="city" id="city">Barcelona</div>
+
+          <div class="emoji-weather"><i class="fas fa-sun"></i></div>
+          <div class="weather" id="main-forecast">Sunny</div>
+
+          <div class="temperature-table">
+            <span class="temperature" id="temperature"> 28°C</span>
+            <span class="celsius-fahrenheit">
+              <a href="#" id="celsius">℃</a> |
+              <a href="#" id="fahrenheit">℉</a></span
+            >
+          </div>
+
+          <div class="min-max">
+            <span class="min"
+              ><span id="min-main-forecast">22ºC</span
+              ><i class="fas fa-long-arrow-alt-down min-arrow"></i
+            ></span>
+            <span class="max"
+              ><i class="fas fa-long-arrow-alt-up max-arrow"></i
+              ><span id="max-main-forecast">29 ºC</span></span
+            >
+          </div>
+        </div>
+        <div class="col-7" style="text-align: center;">
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day0">
+                23/08
+                <br />
+                Mon
+              </div>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-sun emoji-prevision"></i>
+            </div>
+            <div class="col forecast" id="day0-forecast">Mostly Sunny</div>
+            <div class="col forecast">
+              <span id="min-day0">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br />
+              <span id="max-day0">30ºC</span>
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day1">
+                24/08
+                <br />
+                Tue
+              </div>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-sun emoji-prevision"></i>
+            </div>
+            <div class="col forecast" id="day1-forecast">Mostly Sunny</div>
+            <div class="col forecast">
+              <span id="min-day1">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day1"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day2">
+                25/08
+                <br />
+                Wed
+              </div>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud emoji-prevision"></i>
+            </div>
+            <div class="col forecast" id="day2-forecast">Partly cloudy</div>
+            <div class="col forecast">
+              <span id="min-day2">19ºC</span
+              ><i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day2"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day3">
+                26/08
+                <br />
+                Thu
+              </div>
+            </div>
+            <div class="col">
+              <i class="fas fa-sun emoji-prevision"></i>
+            </div>
+            <div class="col forecast" id="day3-forecast">Sunny</div>
+            <div class="col forecast">
+              <span id="min-day3">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day3"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day4">
+                27/08
+                <br />
+                Fri
+              </div>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud emoji-prevision"></i>
+            </div>
+            <div class="col forecast" id="day4-forecast">Partly cloudy</div>
+            <div class="col forecast">
+              <span id="min-day4">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day4"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="src/index.js"></script>
+    </body>
+  </div>
+</html>
