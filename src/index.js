@@ -15,7 +15,7 @@ let monthName = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 let month = monthName[now.getMonth()];
 
@@ -26,7 +26,7 @@ let dayName = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = dayName[now.getDay()];
 let dayOfMonth = now.getDate();
@@ -55,20 +55,7 @@ if (minutes < 10) {
 let formCity = document.querySelector("#searching");
 formCity.addEventListener("submit", actualCity);
 
-//change celsius-fahrenheit
-function changeToCelsius() {
-  let temperatureCelsius = document.querySelector("#temperature");
-  temperatureCelsius.innerHTML = "28℃";
-}
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeToCelsius);
-
-function changeToFahrenheit() {
-  let temperatureFahrenheit = document.querySelector("#temperature");
-  temperatureFahrenheit.innerHTML = "82℉";
-}
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeToFahrenheit);*/
+*/
 
 //week 5 Homework
 
@@ -118,6 +105,9 @@ function updateDataMainForecast(response) {
   let mainForecast = document.querySelector("#main-forecast");
   mainForecast.innerHTML = response.data.weather[0].main;
 
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `Wind speed: ${Math.round(response.data.wind.speed)} `;
+
   let minMainForecast = document.querySelector("#min-main-forecast");
   minMainForecast.innerHTML = Math.round(response.data.main.temp_min) + "ºC";
 
@@ -126,6 +116,11 @@ function updateDataMainForecast(response) {
 
   let currentLocation = document.querySelector("#city");
   currentLocation.innerHTML = location;
+
+  let linkIcon = response.data.weather[0].icon;
+
+  let icon = document.querySelector("#icon-main-forecast");
+  icon.src = `http://openweathermap.org/img/wn/${linkIcon}@2x.png`;
 }
 
 function updateForecast5Days(response) {
@@ -144,6 +139,10 @@ function updateForecast5Days(response) {
 
   let maxDay0 = document.querySelector("#max-day0");
   maxDay0.innerHTML = Math.round(response.data.daily[1].temp.max) + "ºC";
+
+  let linkIcon = response.data.daily[1].weather[0].icon;
+  let icon = document.querySelector("#icon-day1-forecast");
+  icon.src = `http://openweathermap.org/img/wn/${linkIcon}@2x.png`;
 
   //day 2
   let day1 = document.querySelector("#day1");
@@ -228,7 +227,7 @@ function getDate(timeStamp) {
     "09",
     "10",
     "11",
-    "12"
+    "12",
   ];
 
   let theDate = new Date(timeStamp * 1000);
@@ -251,6 +250,7 @@ function getCurrentPosition() {
   );
 }
 
+
 function getCurrentForecastByCityName(userCityName) {
   return `https://api.openweathermap.org/data/2.5/weather?q=${userCityName}&appid=${apiKey}&units=metric`;
 }
@@ -260,5 +260,19 @@ function getCurrentForecastByPosition(latitude, longitude) {
 }
 
 function getForecast5DaysByPosition(latitude, longitude) {
-  return `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  return `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric´;
 }
+
+function changeToCelsius() {
+  let temperatureCelsius = document.querySelector("#temperature");
+  temperatureCelsius.innerHTML = "28℃";
+}
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeToCelsius);
+
+function changeToFahrenheit() {
+  let temperatureFahrenheit = document.querySelector("#temperature");
+  temperatureFahrenheit.innerHTML = "82℉";
+}
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeToFahrenheit);

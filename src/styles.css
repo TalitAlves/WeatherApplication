@@ -1,6 +1,7 @@
 .container {
   width: 60%;
 }
+
 .row {
   border-radius: 4px;
 }
@@ -8,7 +9,7 @@
 .actual {
   border-radius: 4px;
   border: 2px solid #008f8f;
-  background-color: white;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
 .heading {
@@ -28,6 +29,7 @@
 .forecast-row {
   border-bottom: 1px solid #008f8f;
   margin-top: 20px;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .form-city {
   font-size: 15px;
@@ -99,7 +101,8 @@ a {
   text-align: center;
 }
 
-.weather {
+.weather,
+.wind-speed {
   text-align: center;
   font-size: 25px;
 }
@@ -122,4 +125,8 @@ a {
 .city:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.link-repository {
+  text-align: center;
 }
