@@ -39,163 +39,180 @@
           </button>
         </div>
       </div>
-      
-<div class="big-box">
-        <div class="row actual">
-          <div class="col-5">
-            <div class="weather-today">Weather today:</div>
-            <div class="box-actual-time">
-              <div class="date" id="actual-date">August, 22nd</div>
-              <div class="hour" id="actual-hour">Sunday - 11:51</div>
+
+      <div class="row actual">
+        <div class="col-5">
+          <div class="weather-today">Weather today</div>
+          <div class="box-actual-time">
+            Last update:
+            <br />
+            <div class="date" id="actual-date">August, 22nd</div>
+            <div class="hour" id="actual-hour">Sunday - 11:51</div>
+          </div>
+
+          <div class="city" id="city">Barcelona</div>
+          <div class="weather" id="main-forecast">Sunny</div>
+
+          <div class="emoji-weather">
+            <img
+              id="icon-main-forecast"
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="weather-icon"
+            />
+          </div>
+          <div class="wind-speed" id="wind-speed">Wind speed: 28</div>
+
+          <div class="temperature-table">
+            <span class="temperature" id="temperature"> 28°C</span>
+            <span class="celsius-fahrenheit">
+              <a href="#" id="celsius">℃</a> |
+              <a href="#" id="fahrenheit">℉</a></span
+            >
+          </div>
+
+          <div class="min-max">
+            <span class="min"
+              ><span id="min-main-forecast">22ºC</span
+              ><i class="fas fa-long-arrow-alt-down min-arrow"></i
+            ></span>
+            <span class="max"
+              ><i class="fas fa-long-arrow-alt-up max-arrow"></i
+              ><span id="max-main-forecast">29 ºC</span></span
+            >
+          </div>
+        </div>
+        <div class="col-7" style="text-align: center">
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day1">
+                23/08
+                <br />
+                Mon
+              </div>
             </div>
-
-            <div class="city" id="city">Barcelona</div>
-
-            <div class="emoji-weather">
+            <div class="col">
               <img
-                id="icon-main-forecast"
+                id="icon-day1-forecast"
                 src="http://openweathermap.org/img/wn/10d@2x.png"
                 alt="weather-icon"
+                width="70%"
               />
             </div>
-            <div class="weather" id="main-forecast">Sunny</div>
-            <div class="wind-speed" id="wind-speed">Wind speed: 55 </div>
-
-            <div class="temperature-table">
-              <span class="temperature" id="temperature"> 28°C</span>
-              <span class="celsius-fahrenheit">
-                <a href="#" id="celsius">℃</a> |
-                <a href="#" id="fahrenheit">℉</a></span
-              >
-            </div>
-
-            <div class="min-max">
-              <span class="min"
-                ><span id="min-main-forecast">22ºC</span
-                ><i class="fas fa-long-arrow-alt-down min-arrow"></i
-              ></span>
-              <span class="max"
-                ><i class="fas fa-long-arrow-alt-up max-arrow"></i
-                ><span id="max-main-forecast">29 ºC</span></span
-              >
+            <div class="col forecast" id="day1-forecast">Mostly Sunny</div>
+            <div class="col forecast">
+              <span id="min-day1">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br />
+              <span id="max-day1">30ºC</span>
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
             </div>
           </div>
-          <div class="col-7" style="text-align: center">
-            <div class="row forecast-row">
-              <div class="col">
-                <div class="next-days" id="day0">
-                  23/08
-                  <br />
-                  Mon
-                </div>
-              </div>
-              <div class="col">
-                <i class="fas fa-cloud-sun emoji-prevision"></i>
-              </div>
-              <div class="col forecast" id="day0-forecast">Mostly Sunny</div>
-              <div class="col forecast">
-                <span id="min-day0">19ºC</span>
-                <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br />
-                <span id="max-day0">30ºC</span>
-                <i class="fas fa-long-arrow-alt-up max-arrow"></i>
-              </div>
-            </div>
 
-            <div class="row forecast-row">
-              <div class="col">
-                <div class="next-days" id="day1">
-                  24/08
-                  <br />
-                  Tue
-                </div>
-              </div>
-              <div class="col">
-                <i class="fas fa-cloud-sun emoji-prevision"></i>
-              </div>
-              <div class="col forecast" id="day1-forecast">Mostly Sunny</div>
-              <div class="col forecast">
-                <span id="min-day1">19ºC</span>
-                <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
-                  id="max-day1"
-                  >19ºC</span
-                >
-                <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day2">
+                24/08
+                <br />
+                Tue
               </div>
             </div>
+            <div class="col">
+              <img
+                id="icon-day2-forecast"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+                width="70%"
+              />
+            </div>
+            <div class="col forecast" id="day2-forecast">Mostly Sunny</div>
+            <div class="col forecast">
+              <span id="min-day2">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day2"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
 
-            <div class="row forecast-row">
-              <div class="col">
-                <div class="next-days" id="day2">
-                  25/08
-                  <br />
-                  Wed
-                </div>
-              </div>
-              <div class="col">
-                <i class="fas fa-cloud emoji-prevision"></i>
-              </div>
-              <div class="col forecast" id="day2-forecast">Partly cloudy</div>
-              <div class="col forecast">
-                <span id="min-day2">19ºC</span
-                ><i class="fas fa-long-arrow-alt-down min-arrow"></i>
-                <br /><span id="max-day2">19ºC</span>
-                <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day3">
+                25/08
+                <br />
+                Wed
               </div>
             </div>
-            <div class="row forecast-row">
-              <div class="col">
-                <div class="next-days" id="day3">
-                  26/08
-                  <br />
-                  Thu
-                </div>
-              </div>
-              <div class="col">
-                <i class="fas fa-sun emoji-prevision"></i>
-              </div>
-              <div class="col forecast" id="day3-forecast">Sunny</div>
-              <div class="col forecast">
-                <span id="min-day3">19ºC</span>
-                <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
-                  id="max-day3"
-                  >19ºC</span
-                >
-                <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            <div class="col">
+              <img
+                id="icon-day3-forecast"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+                width="70%"
+              />
+            </div>
+            <div class="col forecast" id="day3-forecast">Partly cloudy</div>
+            <div class="col forecast">
+              <span id="min-day3">19ºC</span
+              ><i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day3"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day4">
+                26/08
+                <br />
+                Thu
               </div>
             </div>
-            <div class="row forecast-row">
-              <div class="col">
-                <div class="next-days" id="day4">
-                  27/08
-                  <br />
-                  Fri
-                </div>
+            <div class="col">
+              <img
+                id="icon-day4Forecast"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+                width="70%"
+              />
+            </div>
+            <div class="col forecast" id="day4Forecast">Sunny</div>
+            <div class="col forecast">
+              <span id="min-day4">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day4"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
+            </div>
+          </div>
+          <div class="row forecast-row">
+            <div class="col">
+              <div class="next-days" id="day5">
+                27/08
+                <br />
+                Fri
               </div>
-              <div class="col">
-                <i class="fas fa-cloud emoji-prevision"></i>
-              </div>
-              <div class="col forecast" id="day4-forecast">Partly cloudy</div>
-              <div class="col forecast">
-                <span id="min-day4">19ºC</span>
-                <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
-                  id="max-day4"
-                  >19ºC</span
-                >
-                <i class="fas fa-long-arrow-alt-up max-arrow"></i>
-              </div>
+            </div>
+            <div class="col">
+              <img
+                id="icon-day5-forecast"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather-icon"
+                width="70%"
+              />
+            </div>
+            <div class="col forecast" id="day5-forecast">Partly cloudy</div>
+            <div class="col forecast">
+              <span id="min-day5">19ºC</span>
+              <i class="fas fa-long-arrow-alt-down min-arrow"></i> <br /><span
+                id="max-day5"
+                >19ºC</span
+              >
+              <i class="fas fa-long-arrow-alt-up max-arrow"></i>
             </div>
           </div>
         </div>
-      </div>
-      </div>
-      <a
-        href="https://github.com/TalitAlves/WeatherApplication"
-        target="_blank"
-      >
-      <div class="link-repository">
-        Open source code
-      </a>
-      by Talita Alves
       </div>
 
       <script src="src/index.js"></script>
